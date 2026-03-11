@@ -1,7 +1,11 @@
-export default function ActionsBar() {
+interface ActionsBarProps {
+    onClearPurchased: () => void;
+}
+
+export default function ActionsBar({ onClearPurchased }: ActionsBarProps) {
     return (
         <div> 
-            <button>Clear Purchased</button>
+            <button onClick={onClearPurchased}>Clear Purchased</button>
         </div>
     )
 }
