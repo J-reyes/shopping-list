@@ -1,10 +1,15 @@
-import { CATEGORIES } from '../types'
+import { CATEGORIES, type FilterCategory } from '../types'
 
-export default function CategoryFilter() {
+interface CategoryFilterProps {
+    filterCategory: FilterCategory
+    onChangeFilter: (category: FilterCategory) => void
+}
+
+export default function CategoryFilter({ filterCategory, onChangeFilter }: CategoryFilterProps) {
     return (
         <div> 
             Filter by category:
-            <select name='category'>
+            <select name='category' value={filterCategory} onChange={(e) => onChangeFilter(e.target.value as FilterCategory)}>
                 <option value="All">All</option>
                 {CATEGORIES.map(category => (
                     <option key={category} value={category}>{category}</option>

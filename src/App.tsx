@@ -33,12 +33,16 @@ function App() {
   function handleClearPurchased() {
     setItems((prev) => prev.filter((item) => !item.purchased));
   }
+  
+  function handleChangeFilter(category: FilterCategory) {
+    setFilterCategory(category);
+  }
 
   return (
     <div style={{ padding: "2rem" }}>
       <h1>Shopping App</h1>
       <AddItemForm onAddItem={handleAddItem} />
-      <CategoryFilter />
+      <CategoryFilter filterCategory={filterCategory} onChangeFilter={handleChangeFilter} />
       <ShoppingList
         items={visibleItems}
         onTogglePurchased={handleTogglePurchased}
