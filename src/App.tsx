@@ -44,6 +44,7 @@ function App() {
       <AddItemForm onAddItem={handleAddItem} />
       <CategoryFilter filterCategory={filterCategory} onChangeFilter={handleChangeFilter} />
       <ShoppingList
+        allItems={items}
         items={visibleItems}
         onTogglePurchased={handleTogglePurchased}
         onDeleteItem={handleDeleteItem}

@@ -32,7 +32,7 @@ export default function AddItemForm({ onAddItem }: AddItemFormProps) {
                         <option key={category} value={category}>{category}</option>
                     ))}
                 </select>
-                <button type='submit'>Add</button>
+                <button type='submit' disabled={form.name.trim() === ""}>Add</button>
             </form>
         </div>
     );
