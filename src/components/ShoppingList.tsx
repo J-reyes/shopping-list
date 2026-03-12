@@ -15,14 +15,14 @@ export default function ShoppingList({
   onDeleteItem,
 }: ShoppingListProps) {
   return (
-    <div>
-      <h1>Shopping List</h1>
+    <div className="card">
+      <h2 className="list-title">Items</h2>
       {allItems.length === 0 ? (
-        <p>No items yet</p>
+        <p className="list-empty">No items yet — add something above.</p>
       ) : items.length === 0 ? (
-        <p>No items in this category</p>
+        <p className="list-empty">No items in this category.</p>
       ) : (
-        <ul>
+        <ul className="item-list">
           {items.map((item) => (
             <ShoppingListItem
               key={item.id}

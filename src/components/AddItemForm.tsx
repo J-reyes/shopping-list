@@ -24,15 +24,15 @@ export default function AddItemForm({ onAddItem }: AddItemFormProps) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleAddItem}>
+        <div className="card">
+            <form className="add-form" onSubmit={handleAddItem}>
                 <input type='text' name='name' placeholder='Item name' value={form.name} onChange={(e) => handleAddItemChange("name", e.target.value)} />
                 <select name='category' value={form.category} onChange={(e) => handleAddItemChange("category", e.target.value)}>
                     {CATEGORIES.map(category => (
                         <option key={category} value={category}>{category}</option>
                     ))}
                 </select>
-                <button type='submit' disabled={form.name.trim() === ""}>Add</button>
+                <button type='submit' className="btn-primary" disabled={form.name.trim() === ""}>Add</button>
             </form>
         </div>
     );
